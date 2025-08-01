@@ -1,6 +1,3 @@
-# SkinOAI_Frontend
-SkinOAI is a mobile application that uses machine learning to detect various skin conditions from images. The application provides an intuitive interface for users to upload skin images and receive potential condition predictions. This is the frontend part 
-
 # SkinOAI: AI-Powered Skin Disease Detection
 
 SkinOAI is a web application that uses machine learning to detect various skin conditions from images. The application provides an intuitive interface for users to upload skin images and receive potential condition predictions.
@@ -88,6 +85,73 @@ This project uses a private API key for the Roboflow service. For security reaso
 - `POST /predict`: Submit an image for skin disease prediction
   - Request body: `{ "image": "base64_encoded_image" }`
   - Response: `{ "prediction": "disease_name", "confidence": 0.95, "description": "..." }`
+
+# SkinOAI Frontend
+
+A React Native Expo app for skin condition analysis using AI.
+
+## Setup
+
+1. Install dependencies:
+```bash
+npm install
+```
+
+2. Start the development server:
+```bash
+npx expo start
+```
+
+3. Run on your device:
+   - Scan the QR code with Expo Go app
+   - Or press 'a' for Android emulator
+   - Or press 'i' for iOS simulator
+
+## Backend Connection
+
+The app is configured to connect to the backend at these URLs (in order):
+- `http://192.168.0.140:5000` (for device testing)
+- `http://localhost:5000` (for local development)
+- `http://127.0.0.1:5000` (fallback)
+
+Make sure your backend is running on one of these URLs.
+
+## Features
+
+- Camera capture for skin analysis
+- Photo upload from gallery
+- AI-powered skin condition prediction
+- Detailed results with recommendations
+- History tracking
+
+## File Structure
+
+- `app/` - Main app screens
+- `components/` - Reusable UI components
+- `utils/` - Utility functions and API services
+- `constants/` - App constants and configuration
+
+## API Integration
+
+The app communicates with the backend through:
+- `utils/api.ts` - API service functions
+- `utils/config.ts` - Backend configuration
+
+## Testing
+
+To test the backend connection:
+1. Start your backend server
+2. Open the app
+3. Take a photo or upload an image
+4. Check the results screen
+
+## Troubleshooting
+
+If you can't connect to the backend:
+1. Make sure the backend is running
+2. Check the IP address in `utils/config.ts`
+3. Ensure both devices are on the same network
+4. Try using localhost for simulator testing 
 
 ## 🤝 Contributing
 
